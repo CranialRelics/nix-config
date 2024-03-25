@@ -1,7 +1,7 @@
 { pkgs, unstablePkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-  
+
     fish
     tmux
     neovim
@@ -11,8 +11,8 @@
     unzip
     wget
     git
-    
-    
-  
+    file
+
+
   ];
 }
