@@ -1,8 +1,8 @@
 { pkgs, unstablePkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    python312
-    python312Packages.pip
+    python311
+    python311Packages.pip
     firefox
 
     vscode
@@ -22,6 +22,7 @@
   ];
 
   home-manager.users.sjw = { pkgs, ... }: {
+    nixpkgs.config.allowUnfree = true;
     home.packages = [ pkgs.fish ];
     programs.fish.enable = true;
 
@@ -98,7 +99,7 @@
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         ms-python.python
-        alefragnani.Bookmarks
+        alefragnani.bookmarks
         ms-azuretools.vscode-docker
       ];
       keybindings = [
@@ -124,8 +125,8 @@
         "update.showReleaseNotes" = false;
         "vsicons.dontShowNewVersionMessage" = true;
         "workbench.welcomePage.walkthroughs.openOnInstall" = false;
-        "workbench.sideBar.location": "right";
-        "editor.mouseWheelZoom": true;
+        "workbench.sideBar.location" = "right";
+        "editor.mouseWheelZoom" = true;
       };
     };
 
